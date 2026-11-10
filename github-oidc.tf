@@ -20,7 +20,7 @@ data "aws_iam_policy_document" "service_trust" {
     condition {
       test     = "StringEquals"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = ["repo:SziNo/service-code:ref:refs/heads/main"]
+      values   = ["repo:SziNo@91330415/service-code@1452911104:ref:refs/heads/main"]
     }
   }
 }
@@ -76,8 +76,8 @@ data "aws_iam_policy_document" "infra_trust" {
       test     = "StringEquals"
       variable = "token.actions.githubusercontent.com:sub"
       values = [
-        "repo:SziNo/infra-code:pull_request",
-        "repo:SziNo/infra-code:ref:refs/heads/main",
+        "repo:SziNo@91330415/infra-code@1452912612:pull_request",
+        "repo:SziNo@91330415/infra-code@1452912612:ref:refs/heads/main",
       ]
     }
   }
