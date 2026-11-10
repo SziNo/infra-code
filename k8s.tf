@@ -23,3 +23,8 @@ resource "kubernetes_manifest" "deployment" {
   manifest   = yamldecode(file("${path.module}/k8s/deployment.yaml"))
   depends_on = [kubernetes_namespace_v1.hello]
 }
+
+resource "kubernetes_manifest" "service" {
+  manifest   = yamldecode(file("${path.module}/k8s/service.yaml"))
+  depends_on = [kubernetes_manifest.deployment]
+}
